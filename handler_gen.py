@@ -1,5 +1,4 @@
 import xmltodict
-print dir(xmltodict)
 x = xmltodict.parse(file("Protocol.xml").read())
 handler = file("handler.py", "w+")
 #print x
@@ -8,7 +7,7 @@ for msg in x['protocol']['msg']:
     if '@server' in msg and msg['@server'] == 'true':
         func = msg['@name']
         if 'param' in msg and isinstance(msg['param'],list):
-            params = [param['@name'] for param in msg['param']]
+            params = [param['@name'] if param['@name'] != "from" else "from_" for param in msg['param']]
         elif 'param' in msg:
             params = [msg['param']['@name']]
         else:

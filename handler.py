@@ -1,11 +1,13 @@
 class Handler(object):
     def Binary(self):
+        print "bin"
         pass
 
     def Error(self, msg):
         pass
 
     def Hello(self, nick, pkey, client, clientVer, octgnVer, gameId, gameVersion):
+        print "hello", gameId
         pass
 
     def Settings(self, twoSidedTable):
@@ -113,13 +115,13 @@ class Handler(object):
     def SetMarkerReq(self, card, id, name, count):
         pass
 
-    def TransferMarkerReq(self, from, to, id, name, count):
+    def TransferMarkerReq(self, from_, to, id, name, count):
         pass
 
     def PassToReq(self, id, to, requested):
         pass
 
-    def TakeFromReq(self, id, from):
+    def TakeFromReq(self, id, from_):
         pass
 
     def DontTakeReq(self, id, to):
